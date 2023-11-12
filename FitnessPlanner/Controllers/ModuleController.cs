@@ -1,14 +1,16 @@
 ﻿using FitnessPlannerRepository.Entities;
-using FitnessPlannerRepository.Repository;
-using Microsoft.AspNetCore.Http;
+using FitnessPlannerRepository.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitnessPlanner.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ModuleController : BaseController<ModuleEntity, ModuleRepository>
+    public class ModuleController : BaseController<ModuleEntity, IModuleRepository>
     {
-        public ModuleController(ModuleRepository moduleRepository): base(moduleRepository) { }
+        public ModuleController(IModuleRepository moduleRepository): base(moduleRepository) 
+        {
+        
+        }
     }
 }

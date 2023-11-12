@@ -27,7 +27,7 @@ namespace FitnessPlanner.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ICollection<TEntity>>> Get(int id)
+        public async Task<ActionResult<ICollection<TEntity>>> Get()
         {
             return Ok(await repository.GetAll());
         }

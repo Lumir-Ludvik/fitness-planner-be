@@ -6,7 +6,7 @@ namespace FitnessPlanner.Controllers.interfaces
     public interface IBaseController<TEntity> where TEntity : IEntity
     {
         [HttpGet]
-        Task<ActionResult<ICollection<TEntity>>> Get(int id);
+        Task<ActionResult<ICollection<TEntity>>> Get();
 
         [HttpGet("{id}")]
         Task<ActionResult<ICollection<TEntity>>> Get(Guid id);

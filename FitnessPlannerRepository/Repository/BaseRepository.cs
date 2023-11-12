@@ -4,13 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FitnessPlannerRepository.Repository
 {
-    public class BaseRepository<TEntity, TContext> : IRepository<TEntity> 
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity>
         where TEntity : class, IEntity 
-        where TContext : DbContext
     {
-        private readonly TContext context;
+        private readonly FitnessPlannerDBContext context;
         
-        public BaseRepository(TContext context)
+        public BaseRepository(FitnessPlannerDBContext context)
         {
             this.context = context;
             this.context.Set<TEntity>();

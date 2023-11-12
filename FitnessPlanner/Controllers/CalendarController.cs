@@ -1,14 +1,15 @@
 ﻿using FitnessPlannerRepository.Entities;
 using FitnessPlannerRepository.Repository;
+using FitnessPlannerRepository.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitnessPlanner.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CalendarController : BaseController<CalendarEntity, CalendarRepository>
+    public class CalendarController : BaseController<CalendarEntity, ICalendarRepository>
     {
-        public CalendarController(CalendarRepository calendarRepository) : base(calendarRepository) 
+        public CalendarController(ICalendarRepository calendarRepository) : base(calendarRepository) 
         {
             
         }
