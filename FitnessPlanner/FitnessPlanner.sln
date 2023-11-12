@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessPlanner", "FitnessPlanner.csproj", "{290A5122-A0CE-4C44-BE1A-C3F31D4F1B4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessPlannerRepository", "..\FitnessPlannerRepository\FitnessPlannerRepository.csproj", "{2527C914-34FA-4F26-B678-BB8880599714}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{290A5122-A0CE-4C44-BE1A-C3F31D4F1B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290A5122-A0CE-4C44-BE1A-C3F31D4F1B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290A5122-A0CE-4C44-BE1A-C3F31D4F1B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290A5122-A0CE-4C44-BE1A-C3F31D4F1B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2527C914-34FA-4F26-B678-BB8880599714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2527C914-34FA-4F26-B678-BB8880599714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2527C914-34FA-4F26-B678-BB8880599714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2527C914-34FA-4F26-B678-BB8880599714}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB7419D4-0FCA-40A5-A860-93D698284233}
+	EndGlobalSection
+EndGlobal
