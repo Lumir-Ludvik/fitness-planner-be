@@ -19,6 +19,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var corsPolicyName = "Angular FrontEnd";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: corsPolicyName,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:4200",
+                                              "https://localhost:4200");
+                      });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -29,6 +41,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(corsPolicyName);
 
 app.UseAuthorization();
 

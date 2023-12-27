@@ -21,6 +21,7 @@ namespace FitnessPlanner.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<bool>> Delete(Guid id)
         {
+            //TODO: fix this cardinal sin
             await repository.Delete(id);
 
             return Ok();
