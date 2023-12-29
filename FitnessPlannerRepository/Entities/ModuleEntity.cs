@@ -5,13 +5,13 @@ namespace FitnessPlannerRepository.Entities
     public class ModuleEntity : EntityBase
     {
         [Required]
-        public string Name { get; set; }
+        public string Title { get; set; }
         
         [Required]
         public string Text { get; set; }
         
         [Required]
-        public byte[] Bytes { get; set; }
+        public string Base64Img { get; set; }
         
         [Required]
         public string Filename { get; set; }
@@ -19,7 +19,9 @@ namespace FitnessPlannerRepository.Entities
         [Required]
         public string ContentType { get; set; }
 
-        public Guid CalendarId { get; set; }
-        public CalendarEntity Calendar { get; set; }
+        public string? Day { get; set; }
+
+        public Guid? CalendarId { get; set; }
+        public CalendarEntity? Calendar { get; set; }
     }
 }

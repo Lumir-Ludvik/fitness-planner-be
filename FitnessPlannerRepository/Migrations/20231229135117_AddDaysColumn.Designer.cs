@@ -4,6 +4,7 @@ using FitnessPlannerRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FitnessPlannerRepository.Migrations
 {
     [DbContext(typeof(FitnessPlannerDBContext))]
-    partial class FitnessPlannerDBContextModelSnapshot : ModelSnapshot
+    [Migration("20231229135117_AddDaysColumn")]
+    partial class AddDaysColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,11 +42,11 @@ namespace FitnessPlannerRepository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Base64Img")
+                    b.Property<byte[]>("Bytes")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varbinary(max)");
 
-                    b.Property<Guid?>("CalendarId")
+                    b.Property<Guid>("CalendarId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ContentType")
@@ -51,17 +54,18 @@ namespace FitnessPlannerRepository.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Day")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Filename")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Text")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Title")
+                    b.Property<string>("Text")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -76,7 +80,9 @@ namespace FitnessPlannerRepository.Migrations
                 {
                     b.HasOne("FitnessPlannerRepository.Entities.CalendarEntity", "Calendar")
                         .WithMany("Modules")
-                        .HasForeignKey("CalendarId");
+                        .HasForeignKey("CalendarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Calendar");
                 });
