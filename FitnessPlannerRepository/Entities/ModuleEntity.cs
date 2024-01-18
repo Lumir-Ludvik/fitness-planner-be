@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FitnessPlannerRepository.Entities.@base;
+using System.ComponentModel.DataAnnotations;
 
 namespace FitnessPlannerRepository.Entities
 {
@@ -19,9 +20,7 @@ namespace FitnessPlannerRepository.Entities
         [Required]
         public string ContentType { get; set; }
 
-        public string? Day { get; set; }
-
-        public Guid? CalendarId { get; set; }
-        public CalendarEntity? Calendar { get; set; }
+        public Guid DayId { get; set; }
+        public DayBaseEntity? Day { get; set; }
     }
 }

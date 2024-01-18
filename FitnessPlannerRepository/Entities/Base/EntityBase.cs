@@ -1,6 +1,6 @@
 ﻿using FitnessPlannerRepository.Entities.Interfaces;
 
-namespace FitnessPlannerRepository.Entities
+namespace FitnessPlannerRepository.Entities.@base
 {
     public class EntityBase : IEntity
     {

@@ -3,9 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessPlanner", "FitnessPlanner.csproj", "{290A5122-A0CE-4C44-BE1A-C3F31D4F1B4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessPlanner", "FitnessPlanner.csproj", "{290A5122-A0CE-4C44-BE1A-C3F31D4F1B4D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{04150CCB-7988-4669-A65E-172EFF1D3552} = {04150CCB-7988-4669-A65E-172EFF1D3552}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessPlannerRepository", "..\FitnessPlannerRepository\FitnessPlannerRepository.csproj", "{2527C914-34FA-4F26-B678-BB8880599714}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessPlannerRepository", "..\FitnessPlannerRepository\FitnessPlannerRepository.csproj", "{2527C914-34FA-4F26-B678-BB8880599714}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessPlannerMapping", "..\FitnessPlannerMapping\FitnessPlannerMapping.csproj", "{04150CCB-7988-4669-A65E-172EFF1D3552}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2527C914-34FA-4F26-B678-BB8880599714} = {2527C914-34FA-4F26-B678-BB8880599714}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,10 @@ Global
 		{2527C914-34FA-4F26-B678-BB8880599714}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2527C914-34FA-4F26-B678-BB8880599714}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2527C914-34FA-4F26-B678-BB8880599714}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04150CCB-7988-4669-A65E-172EFF1D3552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04150CCB-7988-4669-A65E-172EFF1D3552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04150CCB-7988-4669-A65E-172EFF1D3552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04150CCB-7988-4669-A65E-172EFF1D3552}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
