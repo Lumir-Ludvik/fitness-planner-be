@@ -7,16 +7,16 @@ namespace FitnessPlannerRepository.Entities
     {
         [Required]
         public string Title { get; set; }
-        
+
         [Required]
         public string Text { get; set; }
-        
+
         [Required]
         public string Base64Img { get; set; }
-        
+
         [Required]
         public string Filename { get; set; }
-        
+
         [Required]
         public string ContentType { get; set; }
 

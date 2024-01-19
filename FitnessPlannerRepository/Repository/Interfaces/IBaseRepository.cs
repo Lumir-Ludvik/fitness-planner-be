@@ -1,7 +1,6 @@
 ﻿
 
 using FitnessPlannerRepository.Entities.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
 namespace FitnessPlannerRepository.Repository.Interfaces
 {

@@ -1,5 +1,4 @@
 ﻿using FitnessPlannerRepository.Entities;
-using FitnessPlannerRepository.Entities.@base;
 using FitnessPlannerRepository.Entities.WeekDays;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,10 +26,10 @@ namespace FitnessPlannerRepository
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<ModuleEntity>()
-                   .HasOne(x => x.Day)
-                   .WithMany(x => x.Modules)
-                   .HasForeignKey(x => x.DayId)
-                   .OnDelete(DeleteBehavior.Cascade);
+                .HasOne(x => x.Day)
+                .WithMany(x => x.Modules)
+                .HasForeignKey(x => x.DayId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<MondayEntity>()
                 .HasOne(x => x.Calendar)

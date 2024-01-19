@@ -1,28 +1,27 @@
 ﻿using FitnessPlanner.Controllers.interfaces;
+using FitnessPlanner.Services.interfaces;
 using FitnessPlannerRepository.Entities.Interfaces;
-using FitnessPlannerRepository.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitnessPlanner.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseController<TEntity, TRepository> : ControllerBase, IBaseController<TEntity>
+    public class BaseController : ControllerBase, IBaseController<TEntity>
         where TEntity : class, IEntity
-        where TRepository : IRepository<TEntity>
     {
-        private readonly TRepository repository;
+        private readonly IBaseControllerService<TEntity> baseControllerService;
 
-        public BaseController(TRepository repository)
+        public BaseController(IBaseControllerService<TEntity> baseControllerService)
         {
-            this.repository = repository;
+            this.baseControllerService = baseControllerService;
         }
+
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<bool>> Delete(Guid id)
         {
-            //TODO: fix this cardinal sin
-            await repository.Delete(id);
+            await baseControllerService.DeleteAsync(id);
 
             return Ok();
         }
@@ -30,19 +29,19 @@ namespace FitnessPlanner.Controllers
         [HttpGet]
         public async Task<ActionResult<ICollection<TEntity>>> Get()
         {
-            return Ok(await repository.GetAll());
+            return Ok(await baseControllerService.GetAllAsync());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<ICollection<TEntity>>> Get(Guid id)
         {
-            return Ok(await repository.Get(id));
+            return Ok(await baseControllerService.GetByIdAsync(id));
         }
 
         [HttpPost]
         public async Task<ActionResult<TEntity>> Post(TEntity entity)
         {
-            await repository.Add(entity);
+            await baseControllerService.CreateAsync(entity);
 
             return Ok(entity);
         }
@@ -50,7 +49,7 @@ namespace FitnessPlanner.Controllers
         [HttpPut]
         public async Task<ActionResult<TEntity>> Put(TEntity entity)
         {
-            await repository.Update(entity);
+            await baseControllerService.UpdateAsync(entity);
 
             return Ok(entity);
         }

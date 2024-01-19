@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore;
 namespace FitnessPlannerRepository.Repository
 {
     public class BaseRepository<TEntity> : IBaseRepository<TEntity>
-        where TEntity : class, IEntity 
+        where TEntity : class, IEntity
     {
         private readonly FitnessPlannerDBContext context;
-        
+
         public BaseRepository(FitnessPlannerDBContext context)
         {
             this.context = context;

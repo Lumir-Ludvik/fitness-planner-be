@@ -8,9 +8,9 @@ namespace FitnessPlanner.Controllers
     [ApiController]
     public class ModuleController : BaseController<ModuleEntity, IModuleRepository>
     {
-        public ModuleController(IModuleRepository moduleRepository): base(moduleRepository) 
+        public ModuleController(IModuleRepository moduleRepository) : base(moduleRepository)
         {
-        
+
         }
     }
 }
